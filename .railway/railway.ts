@@ -1,4 +1,4 @@
-import { defineRailway, preserve, project, service } from "railway/iac";
+import { defineRailway, project, service } from "railway/iac";
 
 export default defineRailway(() => {
   const web = service("web", {
@@ -16,8 +16,9 @@ export default defineRailway(() => {
     },
     env: {
       NODE_ENV: "production",
-      NEXT_PUBLIC_SITE_URL: preserve(),
+      NEXT_PUBLIC_SITE_URL: "https://arshi.frontendfixer.in",
     },
+    domains: ["arshi.frontendfixer.in"],
   });
 
   return project("arshi", {
